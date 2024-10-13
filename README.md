@@ -1,5 +1,7 @@
 # zap-marks
- Zsh plug# ZapMarks
+
+![Screenshot 2024-10-13 at 11 09 56](https://github.com/user-attachments/assets/3eabda30-25a2-45c0-bb12-329628a255c1)
+
 
 ZapMarks is a Zsh plugin that provides quick access to your most used command-line bookmarks. It allows you to save, search, and execute complex commands with ease.
 

@@ -43,5 +43,13 @@
     "command": "for file in *.jpg; do convert \"$file\" -resize 50% \"resized_$file\"; done",
     "description": "Batch resize JPG images to 50%"
   },
+  {
+  "command": "zapmarks-edit",
+  "description": "Edit ZapMarks bookmarks file"
+  },
+  {
+    "command": "zapmarks-add",
+    "description": "Add a new bookmark to ZapMarks"
+  }
 ]
 

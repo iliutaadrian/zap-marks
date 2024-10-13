@@ -52,5 +52,9 @@ zapmarks-add() {
 
 # Function to edit bookmarks file
 zapmarks-edit() {
-    ${EDITOR:-vim} "$ZAPMARKS_FILE"
+    ${EDITOR:-nvim} "$ZAPMARKS_FILE"
 }
+
+# Make functions available as commands
+alias zapmarks-add='zapmarks-add'
+alias zapmarks-edit='zapmarks-edit'

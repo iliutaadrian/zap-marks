@@ -52,7 +52,7 @@ zapmarks-add() {
 
 # Function to edit bookmarks file
 zapmarks-edit() {
-    ${EDITOR:-nvim} "$ZAPMARKS_FILE"
+    ${EDITOR:-lvim} "$ZAPMARKS_FILE"
 }
 
 # Make functions available as commands

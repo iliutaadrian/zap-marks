@@ -9,7 +9,7 @@ else
     PLUGIN_DIR="$HOME/.zsh/zapmarks"
 fi
 
-# Clone the repository if it doesn't exist
+# Clone the repository if it doesn't exist, otherwise update it
 if [ ! -d "$PLUGIN_DIR" ]; then
     git clone https://github.com/iliutaadrian/zapmarks.git "$PLUGIN_DIR"
 else
@@ -17,18 +17,20 @@ else
     git -C "$PLUGIN_DIR" pull
 fi
 
-# Create plugin directory
-mkdir -p "$PLUGIN_DIR"
+# Ensure the config directory exists
+mkdir -p "$HOME/.config"
 
-# Copy plugin files
-cp "$PLUGIN_DIR/zapmarks.plugin.zsh" "$PLUGIN_DIR/"
+# Copy zapmarks.json to the config directory
 cp "$PLUGIN_DIR/zapmarks.json" "$HOME/.config/zapmarks.json"
 
 # Add to .zshrc if not already present
 if ! grep -q "plugins=(.*zapmarks.*)" "$HOME/.zshrc"; then
-    sed -i '' '/^plugins=/ s/)/ zapmarks)/' "$HOME/.zshrc"
+    sed -i.bak '/^plugins=/ s/)/ zapmarks)/' "$HOME/.zshrc"
+    echo "Added zapmarks to plugins in .zshrc"
+else
+    echo "zapmarks already in plugins list in .zshrc"
 fi
 
 echo "ZapMarks installed to $PLUGIN_DIR"
-echo "Example zapmarks.json copied to $HOME/.config/zapmarks.json"
+echo "zapmarks.json copied to $HOME/.config/zapmarks.json"
 echo "Please restart your terminal or run 'source ~/.zshrc' to start using ZapMarks."

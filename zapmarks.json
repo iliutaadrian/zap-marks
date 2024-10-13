@@ -1,0 +1,47 @@
+[
+  {
+    "command": "source ~/.tmux.conf",
+    "description": "Reload tmux configuration"
+  },
+  {
+    "command": "tmux attach -d",
+    "description": "Reattach to tmux session"
+  },
+  {
+    "command": "docker compose build && docker compose up -d",
+    "description": "Build and start Docker containers"
+  },
+  {
+    "command": "rails s",
+    "description": "Start Rails server"
+  },
+  {
+    "command": "find . -name '*.?*' -type f | rev | cut -d. -f1 | rev | tr '[:upper:]' '[:lower:]' | sort | uniq --count | sort -rn | head",
+    "description": "Count and rank file extensions"
+  },
+  {
+    "command": "find . -type f -not -name \"en.yml\" -exec rm {} +",
+    "description": "Remove all non-en.yml files (caution: permanent deletion)"
+  },
+  {
+    "command": "ps aux | grep [p]ython | awk '{print $2}' | xargs kill -9",
+    "description": "Kill all Python processes"
+  },
+  {
+    "command": "sed -i 's/old-text/new-text/g' $(grep -rl 'old-text' /path/to/search)",
+    "description": "Find and replace text in multiple files"
+  },
+  {
+    "command": "du -sh * | sort -rh | head -n 10",
+    "description": "Show 10 largest files/directories in current dir"
+  },
+  {
+    "command": "find . -type f -exec sh -c 'file \"$1\" | grep -qi \"text\" && echo \"$1\"' _ {} \\; | xargs grep -n \"search-term\"",
+    "description": "Search for text in all text files recursively"
+  },
+  {
+    "command": "for file in *.jpg; do convert \"$file\" -resize 50% \"resized_$file\"; done",
+    "description": "Batch resize JPG images to 50%"
+  },
+]
+

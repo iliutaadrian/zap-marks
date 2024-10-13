@@ -40,7 +40,7 @@ zle -N zapmarks
 bindkey '^B' zapmarks
 
 # Function to add a new bookmark
-zapmarks-add() {
+zapmarks-add-f() {
     local command description
     echo "Enter the command to bookmark:"
     read -r command
@@ -51,10 +51,10 @@ zapmarks-add() {
 }
 
 # Function to edit bookmarks file
-zapmarks-edit() {
+zapmarks-edit-f() {
     ${EDITOR:-lvim} "$ZAPMARKS_FILE"
 }
 
 # Make functions available as commands
-alias zapmarks-add='zapmarks-add'
-alias zapmarks-edit='zapmarks-edit'
+alias zapmarks-add='zapmarks-add-f'
+alias zapmarks-edit='zapmarks-edit-f'

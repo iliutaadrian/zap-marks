@@ -25,7 +25,7 @@ ZapMarks is a Zsh plugin that provides quick access to your most used command-li
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/zapmarks.git ~/.zsh/zapmarks
+   git clone https://github.com/iliutaadrian/zapmarks.git ~/.zsh/zapmarks
    ```
 
 2. Add the following to your `.zshrc`:
@@ -38,13 +38,13 @@ ZapMarks is a Zsh plugin that provides quick access to your most used command-li
 #### zinit
 Add this to your `.zshrc`:
 ```zsh
-zinit light yourusername/zapmarks
+zinit light iliutaadrian/zapmarks
 ```
 
 #### Oh My Zsh
 1. Clone the repository into your custom plugins directory:
    ```
-   git clone https://github.com/yourusername/zapmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zapmarks
+   git clone https://github.com/iliutaadrian/zapmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zapmarks
    ```
 2. Add `zapmarks` to your plugin list in `.zshrc`:
    ```zsh

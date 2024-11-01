@@ -1,71 +1,104 @@
 # ZapMarks
 
+> Quick access to your most-used command-line bookmarks for Zsh
+
 ![Screenshot 2024-10-13 at 11 09 56](https://github.com/user-attachments/assets/3eabda30-25a2-45c0-bb12-329628a255c1)
 
-ZapMarks is a Zsh plugin that provides quick access to your most used command-line bookmarks. It allows you to save, search, and execute complex commands with ease.
+ZapMarks is a powerful Zsh plugin that streamlines your command-line workflow by providing instant access to frequently used commands through an intuitive bookmark system.
 
-## Features
+## ✨ Features
 
-- Fuzzy search through your bookmarked commands
-- Preview command details before execution
-- Add new bookmarks directly from the command line
-- Edit bookmarks file with your preferred editor
-- Fast and efficient, powered by fzf and jq
+- 🔍 **Smart Search**: Fuzzy search through your bookmarked commands
+- 👀 **Command Preview**: See command details before execution
+- ⚡️ **Quick Add**: Bookmark new commands directly from the terminal
+- 🛠 **Easy Management**: Edit bookmarks with your preferred editor
+- 🚀 **High Performance**: Optimized performance using fzf and jq
 
-## Prerequisites
-
-- Zsh
-- [fzf](https://github.com/junegunn/fzf)
-- [jq](https://stedolan.github.io/jq/)
-
-## Installation
-
-### Automated Installation (Recommended)
-
-Run the following command in your terminal:
+## 🚀 Quick Start
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/iliutaadrian/zapmarks/main/scripts/install.sh)"
 ```
 
-This script will:
-1. Clone the ZapMarks repository to the appropriate location
-2. Set up the plugin for your Zsh configuration
-3. Install the example `zapmarks.json` file
+After installation, restart your terminal or run:
+```bash
+source ~/.zshrc
+```
 
-After running the script, restart your terminal or run `source ~/.zshrc`.
+## 📋 Prerequisites
 
-### Manual Installation
+Before installing, ensure you have:
 
-If you prefer to install manually:
+- Zsh shell
+- [fzf](https://github.com/junegunn/fzf) - Command-line fuzzy finder
+- [jq](https://stedolan.github.io/jq/) - Lightweight command-line JSON processor
+
+## 💻 Installation
+
+### Option 1: Automated Installation (Recommended)
+
+The automated installation script will:
+1. Clone the repository to the appropriate location
+2. Configure your Zsh setup
+3. Install the default bookmarks file
+
+### Option 2: Manual Installation
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/iliutaadrian/zapmarks.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zapmarks
    ```
 
-2. Run the install script:
+2. Run the installation script:
    ```bash
    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zapmarks/scripts/install.sh
    ```
 
-3. Add `zapmarks` to your plugin list in `.zshrc`:
+3. Add the plugin to your `.zshrc`:
    ```zsh
    plugins=(... zapmarks)
    ```
 
-4. Restart your terminal or run `source ~/.zshrc`.
+## 🎯 Usage
 
-## Usage
+### Basic Commands
 
-- Press `Alt+B` to open the bookmark fuzzy finder
-- Use `zapmarks-add` to add a new bookmark
-- Use `zapmarks-edit` to edit your bookmarks file directly
+| Command | Description |
+|---------|-------------|
+| `CTR+B` | Open the bookmark fuzzy finder |
+| `zapmarks-add` | Add a new bookmark |
+| `zapmarks-edit` | Edit bookmarks file |
 
-## Contributing
+### Example Workflow
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Save a frequently used command:
+   ```bash
+   zapmarks-add
+   # Follow the prompts to add your command
+   ```
 
-## License
+2. Press `Alt+B` to access your bookmarks
+3. Type to fuzzy search through your commands
+4. Press Enter to execute the selected command
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📁 Configuration
+
+ZapMarks stores its configuration in `~/.zapmarks.json`. The file structure is:
+
+```json
+{
+  "bookmarks": [
+    {
+      "command": "git status",
+      "description": "Check git status",
+      "tags": ["git", "status"]
+    }
+  ]
+}
+```
+
+## 🙏 Acknowledgments
+
+- [fzf](https://github.com/junegunn/fzf) for the amazing fuzzy finder
+- [jq](https://stedolan.github.io/jq/) for JSON processing
+- [Oh My Zsh](https://ohmyz.sh/) for the plugin infrastructure
